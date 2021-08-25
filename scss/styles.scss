@@ -90,7 +90,7 @@ body {
         float: left;
         display: none;
         position: absolute;
-        padding-top: 90px;
+        //padding-top: 90px;
         left: 0;
         min-height: 400px;
         z-index: -1;
@@ -244,7 +244,7 @@ body {
 
         .dropdown-content {
           position: static !important;
-          padding-top: 0;
+          padding-top: 0 !important;
         }
 
         .bottom-mobile,
