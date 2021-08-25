@@ -36,6 +36,11 @@ $(document).ready(function(){
       }
     }
   }
+
+  window.onresize = () => {
+    let navHeight = $('.topnav').height();
+    $('#dropdown-content').css({paddingTop: navHeight});
+  }
  });
 
 
