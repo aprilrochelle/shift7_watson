@@ -1,0 +1,279 @@
+@import "_variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+  margin: 0;
+  background-color: $borders;
+
+  .topnav {
+    background-color: white;
+    overflow-x: hidden;
+    z-index: 999;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+    // bar above nav menu
+    .topbar {
+      background-color: black;
+      color: white;
+      height: 34px;
+      display: flex;
+      justify-content: space-between;
+
+      .flag {
+        height: 22px;
+        margin: 5px 12px 3px;
+      }
+
+      .top-right {
+        button {
+          color: white;
+          margin: 0;
+          height: 100%;
+          font-size: 15px;
+          border-radius: 0;
+
+          &:active,
+          &:hover {
+            color: white !important;
+            border-bottom: none !important;
+          }
+        }
+
+        button:not(.cart) {
+          padding: 0 8px;
+        }
+
+        .cart {
+          background-color: $primary;
+          padding: 0 15px 0 8px;
+        }
+      }
+    }
+
+    // main nav menu items
+    .logo img {
+      height: 45px;
+    }
+
+    .logo {
+      padding: 8px 0 0 0 !important;
+    }
+
+    a,
+    button {
+      float: left;
+      display: block;
+      color: $text-dark;
+      text-align: center;
+      padding: 20px 5px;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 22px;
+      font-family: "Noto Sans";
+      font-weight: 700;
+
+      &.active:not(.icon):not(.logo):not(.dd-link),
+      &:active:not(.icon):not(.logo):not(.dd-link) {
+        color: $primary;
+        border-bottom: 3px solid $primary;
+      }
+    }
+
+    button {
+      border: none;
+      background: transparent;
+    }
+
+    .dropdown {
+      .dropdown-content {
+        float: left;
+        display: none;
+        position: absolute;
+        padding-top: 90px;
+        left: 0;
+        min-height: 400px;
+        z-index: -1;
+        background-color: white;
+        width: 100%;
+
+        a {
+          float: none;
+          display: block;
+          text-align: left;
+          padding-left: 30px;
+          font-size: 16px;
+        }
+
+        &.show {
+          display: block;
+        }
+      }
+    }
+
+    .main,
+    #back {
+      text-transform: uppercase;
+    }
+
+    .icon,
+    .top-mobile,
+    .bottom-mobile,
+    #back {
+      display: none;
+    }
+
+    .search {
+      float: right;
+      padding: 18px 15px;
+
+      input {
+        text-align: right;
+        border: none;
+        font-size: 14px;
+        font-family: "Noto Sans";
+
+        &::placeholder {
+          color: black;
+        }
+      }
+
+      i {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: $page-section-bk;
+
+    //Mobile menu closed
+    .topnav {
+      a.main,
+      div.dropdown,
+      div.topbar,
+      .search,
+      .main-nav .logo,
+      .expanded-mobile-close {
+        display: none;
+      }
+
+      .top-mobile {
+        display: block !important;
+
+        .icons-mobile {
+          float: right;
+        }
+
+        .logo img,
+        button {
+          margin: 0 15px 0 0 !important;
+        }
+
+        .icon {
+          display: inline;
+          margin: 0 0 0 15px;
+        }
+      }
+
+      // Mobile menu open
+      &.expanded {
+        box-shadow: none;
+
+        .expanded-mobile-close {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 15px;
+          background-color: black;
+          color: white;
+          font-family: "Noto Sans";
+        }
+
+        .topbar-mobile {
+          display: none;
+        }
+
+        a.main:not(.logo),
+        button:not(#back),
+        .dropdown-content a {
+          &::after {
+            content: "\203A";
+            float: right;
+          }
+        }
+
+        #back {
+          &::before {
+            content: "\2039  ";
+          }
+        }
+
+        a,
+        button,
+        div.dropdown {
+          float: none;
+          display: block;
+          text-align: left;
+          font-size: 16px;
+        }
+
+        a.main,
+        button,
+        div.dropdown a {
+          border-bottom: $borders 1px solid;
+          width: 100%;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 20px 15px;
+          color: $text-dark;
+
+          &:hover:not(.icon):not(.logo),
+          &:active:not(.icon):not(.logo) {
+            border-bottom: $borders 1px solid;
+            color: $text-dark;
+          }
+        }
+
+        div.dropdown a,
+        .dropdown-content {
+          background-color: $page-section-bk;
+        }
+
+        .dropdown-content {
+          position: static !important;
+          padding-top: 0;
+        }
+
+        .bottom-mobile,
+        .bottom-mobile a,
+        .bottom-mobile a:hover {
+          display: block;
+          font-size: 14px;
+          background-color: $page-section-bk;
+          border-bottom: none;
+
+          .flag {
+            height: 20px;
+            padding: 20px 0 20px 15px;
+          }
+        }
+
+        .bottom-mobile {
+          padding: 0;
+
+          a {
+            padding: 20px 0;
+
+            &:active {
+              border-bottom: none !important;
+              color: black !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

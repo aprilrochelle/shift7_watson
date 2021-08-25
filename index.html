@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Main Nav</title>
+  </head>
+  <body>
+    <div class="topnav" id="topnav">
+      <!-- Desktop/Tablet: Top -->
+      <div class="topbar">
+        <img src="/assets/images/flag.png" alt="" class="flag" />
+        <div class="top-right">
+          <button><i class="bi bi-shield-fill-check"></i></button>
+          <button><i class="bi bi-question-circle-fill"></i></button>
+          <button><i class="bi bi-geo-alt-fill"></i></button>
+          <button><i class="bi bi-person-fill"></i></button>
+          <button class="cart"><i class="bi bi-cart-fill"></i> 3</button>
+        </div>
+      </div>
+
+      <!-- Mobile: Top -->
+      <div class="top-mobile">
+        <div class="topbar-mobile">
+          <a href="javascript:void(0);" class="icon" onclick="toggleExpand()">
+            <i class="bi bi-list"></i>
+          </a>
+          <a href="#" class="logo"><img src="/assets/images/logo.jpg" /></a>
+          <div class="icons-mobile">
+            <button><i class="bi bi-search"></i></button>
+            <button><i class="bi bi-person-fill"></i></button>
+            <button class="cart"><i class="bi bi-cart-fill"></i> 3</button>
+          </div>
+        </div>
+        <div class="expanded-mobile-close">
+          <h4>Menu</h4>
+          <i class="bi bi-x-lg" onclick="toggleExpand()"></i>
+        </div>
+      </div>
+
+      <!-- Main Nav Links -->
+      <div class="main-nav">
+        <a href="#" class="main logo"><img src="/assets/images/logo.jpg" /></a>
+        <div class="dropdown">
+          <button onclick="showDropdown()" class="main dropbtn">
+            Solutions
+          </button>
+          <button id="back" onclick="closeDropdown()">Go Back</button>
+          <div id="dropdown-content" class="dropdown-content">
+            <a class="dd-link" href="javascript:void(0);">Solutions by Industry</a>
+            <a class="dd-link" href="javascript:void(0);">Solutions by Process</a>
+            <a class="dd-link" href="javascript:void(0);">Software Solutions</a>
+            <a class="dd-link" href="javascript:void(0);">Services</a>
+          </div>
+        </div>
+        <a class="main" href="javascript:void(0);">Products</a>
+        <a class="main" href="javascript:void(0);">Automation</a>
+        <a class="main" href="javascript:void(0);">Education</a>
+        <a class="main" href="javascript:void(0);">Resources</a>
+        <div class="search">
+          <input type="text" placeholder="Search" />
+          <i class="bi bi-search"></i>
+        </div>
+      </div>
+
+      <!-- Mobile: Bottom -->
+      <div class="bottom-mobile">
+        <a href="javascript:void(0);"
+          ><i class="bi bi-question-circle-fill"></i> Help &#8250;</i
+        ></a>
+        <a href="javascript:void(0);"
+          ><i class="bi bi-geo-alt-fill"></i> Where to Buy/Rent</a
+        >
+        <a href="javascript:void(0);"
+          ><i class="bi bi-shield-fill-check"></i> Safety</a
+        >
+        <img src="/assets/images/flag-light.png" alt="" class="flag" />
+      </div>
+    </div>
+    <!-- End of Nav -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/445928aadd.js"></script>
+    <script src="/assets/scripts/scripts.js"></script>
+  </body>
+</html>
